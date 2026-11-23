@@ -1,0 +1,1349 @@
+{
+ "labels": [
+  {
+   "name": "lane: A",
+   "color": "0f766e",
+   "description": "Lane A: extraction and platform"
+  },
+  {
+   "name": "lane: B",
+   "color": "a21caf",
+   "description": "Lane B: data and matching"
+  },
+  {
+   "name": "lane: C",
+   "color": "c2410c",
+   "description": "Lane C: product and decisions"
+  },
+  {
+   "name": "lane: shared",
+   "color": "6b7280",
+   "description": "Shared work"
+  },
+  {
+   "name": "prio: must",
+   "color": "b91c1c",
+   "description": "The capstone fails without it"
+  },
+  {
+   "name": "prio: should",
+   "color": "d97706",
+   "description": "Planned, dropped first if we are behind"
+  },
+  {
+   "name": "prio: could",
+   "color": "9ca3af",
+   "description": "Extra, only after M3"
+  },
+  {
+   "name": "size: S",
+   "color": "e5e7eb",
+   "description": "About half a day"
+  },
+  {
+   "name": "size: M",
+   "color": "cbd5e1",
+   "description": "One to two days"
+  },
+  {
+   "name": "size: L",
+   "color": "94a3b8",
+   "description": "Three days or more"
+  },
+  {
+   "name": "model piece",
+   "color": "1d4ed8",
+   "description": "One of the three model pieces: may shrink, never cut"
+  },
+  {
+   "name": "first part due M1",
+   "color": "f59e0b",
+   "description": "Finished at M2, but its first part is needed for the M1 demo"
+  },
+  {
+   "name": "schema-change",
+   "color": "7c3aed",
+   "description": "Changes a frozen data shape: all three approve"
+  }
+ ],
+ "milestones": [
+  {
+   "title": "M1 Walking skeleton (Fri 27 Nov)",
+   "due_on": "2026-11-27T12:00:00Z",
+   "description": "One real act goes through the whole pipeline. Data shapes frozen. Sealed exam drawn."
+  },
+  {
+   "title": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due_on": "2026-12-04T12:00:00Z",
+   "description": "Practice acts read, ledger filled, Bergmann matched, euros and decisions on screen, first numbers."
+  },
+  {
+   "title": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due_on": "2026-12-11T12:00:00Z",
+   "description": "Online, daily job running, freeze tag set, the exam run once, results table filled."
+  },
+  {
+   "title": "M4 Final presentation (17 or 18 Dec)",
+   "due_on": "2026-12-18T12:00:00Z",
+   "description": "Report, README, slides, three rehearsals, backup video."
+  },
+  {
+   "title": "Extras (only after M3)",
+   "due_on": null,
+   "description": "Could items. Start one only after M3 is reached, with one owner."
+  }
+ ],
+ "issues": [
+  {
+   "id": "X-01",
+   "title": "X-01: Kickoff: lanes, working agreement, issues",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "Mon 23 Nov",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** The first meeting: who takes which lane, how we work, and every Must item visible as an issue.\n\n**Done when:** Lane owners are confirmed, the working agreement is accepted, and every Must item is an issue.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | all |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | Mon 23 Nov |\n\n**Read first:**\n\n- [docs/08_LANES_AND_ROLES.md]({{BLOB}}/docs/08_LANES_AND_ROLES.md)\n- [docs/12_WORKING_AGREEMENT.md]({{BLOB}}/docs/12_WORKING_AGREEMENT.md)\n",
+   "state": "closed",
+   "close_comment": "Done at the kickoff on Mon 23 Nov."
+  },
+  {
+   "id": "X-02",
+   "title": "X-02: Repository from the course template pattern",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Set up the project skeleton so everyone can start coding in the same structure.\n\n**Done when:** The folders `src/`, `tests/`, `data/evaluation/` and `reports/` exist; uv, ruff, ty and pytest run in the automatic checks; `main` is protected, or the checks act as the gate.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n- [docs/12_WORKING_AGREEMENT.md]({{BLOB}}/docs/12_WORKING_AGREEMENT.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-03",
+   "title": "X-03: Docker Compose with `api` and `postgres`",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** One command that starts the whole desk on any laptop.\n\n**Done when:** `docker compose up` works on at least two laptops by M1, and on the third by Tue 1 Dec. Extras sit behind a profile.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-04",
+   "title": "X-04: Data shapes v1 (Pydantic contracts) and freeze",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "frozen Thu 26 Nov",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** Write the shared data shapes that the three lanes code against, then freeze them.\n\n**Done when:** All contracts listed in `docs/04_ARCHITECTURE.md` exist, with example files; frozen on Thu 26 Nov with approval from all three.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A, all approve |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | frozen Thu 26 Nov |\n\n**Read first:**\n\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-05",
+   "title": "X-05: Labelling guide and label file format",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Write down how we record the correct answers for an act by hand, so three people label the same way.\n\n**Done when:** The guide has an example for every hard case; `tdd labels check` validates label files.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane B, with lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n- [docs/examples/sample_label_32026R2393.yaml]({{BLOB}}/docs/examples/sample_label_32026R2393.yaml)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-06",
+   "title": "X-06: Recheck the domain facts against the current law",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Our facts were read in an older version of the basic regulation. Act 2026/2393 cites an Article 10(4a) that the older version does not have. Read the current version and, for the question of who owes the duty, the Union Customs Code.\n\n**Done when:** Each fact in `docs/01_PRODUCT.md` is confirmed with article and paragraph, corrected, or removed from the screens.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane C, with lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/01_PRODUCT.md]({{BLOB}}/docs/01_PRODUCT.md)\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-07",
+   "title": "X-07: At least one conversation with a customs or trade person",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Ask a real customs person whether the problem is real and which of our three product bets matters.\n\n**Done when:** Notes on the three product bets in `docs/01_PRODUCT.md` are written down.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane C, with lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/01_PRODUCT.md]({{BLOB}}/docs/01_PRODUCT.md)\n- [docs/11_DECISIONS.md]({{BLOB}}/docs/11_DECISIONS.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-08",
+   "title": "X-08: Practice set: 40 acts, 10 of them labelled twice",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "Wed 2 Dec",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** All three read real acts and write down the correct answers. The desk is built and tuned on these.\n\n**Done when:** 40 valid label files by Wed 2 Dec; agreement on the double-labelled acts is reported as counts per field.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | all |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | Wed 2 Dec |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n- [docs/examples/02_READING_THE_DUTY_TABLE.md]({{BLOB}}/docs/examples/02_READING_THE_DUTY_TABLE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-09",
+   "title": "X-09: Sealed exam: draw 25 acts by case and type, seal, label blind",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "drawn Fri 27 Nov, labelled by Mon 7 Dec",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** 25 acts are locked away and labelled by hand. The desk sees them once, on Fri 11 Dec.\n\n**Done when:** Drawn and sealed on Fri 27 Nov; at least 12 acts with a company table; labelled by Mon 7 Dec; the owner of lane A never opens it.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane B (keeper), with lane C |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | drawn Fri 27 Nov, labelled by Mon 7 Dec |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n- [docs/examples/09_GRADING_THE_DESK.md]({{BLOB}}/docs/examples/09_GRADING_THE_DESK.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-10",
+   "title": "X-10: The written promise (pre-registration), in two steps",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "Fri 4 Dec and Thu 10 Dec",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Write down how we will score the exam before we see any exam result.\n\n**Done when:** Numbers, bars and scoring code committed on Fri 4 Dec; model and prompt versions added and `holdout-freeze` tagged on Thu 10 Dec.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | Fri 4 Dec and Thu 10 Dec |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n- [docs/examples/09_GRADING_THE_DESK.md]({{BLOB}}/docs/examples/09_GRADING_THE_DESK.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-11",
+   "title": "X-11: Evaluation report, failure analyses and cards",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "L",
+   "days": 3,
+   "milestone": "M4 Final presentation (17 or 18 Dec)",
+   "due": "M4",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: L"
+   ],
+   "body": "**What:** The write-up: the results, one failure analysis per lane, one card per model piece, and a \"who did what\" page.\n\n**Done when:** Everything is in `reports/`; every failure shows input, output, truth and cause.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A (editor), all |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M4 |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-12",
+   "title": "X-12: README with the results table",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M4 Final presentation (17 or 18 Dec)",
+   "due": "M4",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** The first page a visitor sees: the exam results and how to start the desk.\n\n**Done when:** The README opens with the results table from `docs/10_EVALUATION.md`; setup takes four commands.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M4 |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-13",
+   "title": "X-13: Demo script, three rehearsals, a backup video",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M4 Final presentation (17 or 18 Dec)",
+   "due": "M4",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** Plan and practise the live part of the final presentation, and record a backup.\n\n**Done when:** The script is timed; at least three rehearsals are done; the video is saved with the release.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane C (owner), all |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M4 |\n\n**Read first:**\n\n- [docs/17_DEMO_AND_PRESENTATION.md]({{BLOB}}/docs/17_DEMO_AND_PRESENTATION.md)\n- [docs/09_ROADMAP.md]({{BLOB}}/docs/09_ROADMAP.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-14",
+   "title": "X-14: Final slides",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M4 Final presentation (17 or 18 Dec)",
+   "due": "M4",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** The slides of the final presentation, including an architecture picture and a slide on responsible use.\n\n**Done when:** Each lane has its own slides with its own numbers.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | all |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M4 |\n\n**Read first:**\n\n- [docs/17_DEMO_AND_PRESENTATION.md]({{BLOB}}/docs/17_DEMO_AND_PRESENTATION.md)\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-15",
+   "title": "X-15: Name test pairs: about 300, with look-alikes",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "labelled by Tue 1 Dec",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** A test set for the name matcher: the same legal entity written differently in different acts, plus look-alikes that are different legal entities.\n\n**Done when:** A pairs file with its source acts; labels from lanes A and C only, done by Tue 1 Dec.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane B builds, lanes A and C label |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | labelled by Tue 1 Dec |\n\n**Read first:**\n\n- [docs/examples/04_WHOSE_NAME_IS_IT.md]({{BLOB}}/docs/examples/04_WHOSE_NAME_IS_IT.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-16",
+   "title": "X-16: Scope test pairs: about 120",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "labelled by Tue 1 Dec",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** A test set for the scope judge: pairs of one purchase line and one act, with the correct answer.\n\n**Done when:** A pairs file; labelled by Tue 1 Dec; counts per class reported.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane C builds, lanes A and B label |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | labelled by Tue 1 Dec |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-17",
+   "title": "X-17: Example files for acts 2026/2393 and 2026/2311",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "day 3",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Two real acts as ready-made test data: the text, the expected facts and the expected rows.\n\n**Done when:** The tests of every lane can use them on day 3.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane A |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | day 3 |\n\n**Read first:**\n\n- [docs/examples/02_READING_THE_DUTY_TABLE.md]({{BLOB}}/docs/examples/02_READING_THE_DUTY_TABLE.md)\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "X-18",
+   "title": "X-18: Labelling viewer",
+   "lane": "shared",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: shared",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** A small page that shows the act text next to the empty answer file, with no model output in view.\n\n**Done when:** It is used for the practice set and the sealed exam.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Led by | lane C |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-01",
+   "title": "A-01: Text normaliser: sections, paragraph ids, spaces and decimal commas",
+   "lane": "A",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** Cut an act into clean parts (title, reasons, articles, annexes) so every later step can point at an exact place.\n\n**Done when:** Acts 2026/2393 and 2026/2311 are split into title, recitals, articles and annexes, with stable ids.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/examples/02_READING_THE_DUTY_TABLE.md]({{BLOB}}/docs/examples/02_READING_THE_DUTY_TABLE.md)\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-02",
+   "title": "A-02: Duty-table parser with the grouped-cell logic",
+   "lane": "A",
+   "priority": "Must",
+   "size": "L",
+   "days": 3,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M1 for one act, Tue 1 Dec for all practice layouts",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: L",
+    "first part due M1"
+   ],
+   "body": "**What:** Python code that reads the table of companies, rates and codes, including cells that hold several names.\n\n**Done when:** The table of 2026/2393 gives the right rate and code per company, pinned by a test; all table layouts in the practice set pass by Tue 1 Dec.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M1 for one act, Tue 1 Dec for all practice layouts |\n\n**Read first:**\n\n- [docs/examples/02_READING_THE_DUTY_TABLE.md]({{BLOB}}/docs/examples/02_READING_THE_DUTY_TABLE.md)\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-03",
+   "title": "A-03: Model extraction agent (PydanticAI)",
+   "lane": "A",
+   "priority": "Must",
+   "size": "L",
+   "days": 3,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: L",
+    "model piece"
+   ],
+   "body": "**What:** The model reads what a table cannot say: products, dates, which older act this one changes. Every answer comes with a quote.\n\n**Done when:** It runs on the 40 practice acts with typed output, a quote per field, company rows as a cross-check, tools and a budget; tokens, cost and time are stored per act; the provider is chosen.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "state": "open"
+  },
+  {
+   "id": "A-04",
+   "title": "A-04: Verifier: quote gate, value-in-quote, code check, consistency",
+   "lane": "A",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** Python checks every answer of the model against the text of the act.\n\n**Done when:** Every field has a status; a value must appear inside its own quote after cleaning; parser and model are compared; mismatches go to a person.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-05",
+   "title": "A-05: Combined system and its rules",
+   "lane": "A",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Put parser, model and verifier together: when do we accept an act, and when does a person look?\n\n**Done when:** Parser rows are cross-checked by the model; disagreements go to a person; coverage is logged.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/02_READING_THE_DUTY_TABLE.md]({{BLOB}}/docs/examples/02_READING_THE_DUTY_TABLE.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-06",
+   "title": "A-06: Evaluation harness",
+   "lane": "A",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: M",
+    "model piece"
+   ],
+   "body": "**What:** The code that scores the desk against the hand-written answers and prints the results table.\n\n**Done when:** One command produces the results table with intervals, the paired comparison and coverage; it refuses the sealed exam without the tag and writes a run id only once; a dry run works on the practice set; a 5-act subset runs in the automatic checks from recorded responses.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/09_GRADING_THE_DESK.md]({{BLOB}}/docs/examples/09_GRADING_THE_DESK.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "state": "open"
+  },
+  {
+   "id": "A-07",
+   "title": "A-07: Planted-error test",
+   "lane": "A",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Teammates plant 20 wrong values to see whether the verifier catches them.\n\n**Done when:** The 20 plants are written by the owners of lanes B and C without reading the verifier code; the share caught is reported.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-08",
+   "title": "A-08: Traces, cost and speed (Langfuse)",
+   "lane": "A",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** See every model call, and know what one act costs and how long it takes.\n\n**Done when:** One trace per act; cost per act and the slow end of the timing come from one query.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-09",
+   "title": "A-09: Automatic checks on every pull request",
+   "lane": "A",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Every change is checked the same way before it can be merged.\n\n**Done when:** Lint, types, tests, engine checks and a cached evaluation subset are required for merging to `main`; the exam answers never enter the checks or their secrets.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/12_WORKING_AGREEMENT.md]({{BLOB}}/docs/12_WORKING_AGREEMENT.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-10",
+   "title": "A-10: Online deploy on Render, with a check after each deploy",
+   "lane": "A",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: A",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Put the desk online, and make sure it still answers after every deploy.\n\n**Done when:** The online desk passes `/health`, `/acts` and one case page after every deploy.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-11",
+   "title": "A-11: Model reads what an amendment changes",
+   "lane": "A",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: A",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** When an act changes an older act, let the model say which rows change.\n\n**Done when:** The change is extracted, or the act goes to a person.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md]({{BLOB}}/docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md)\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "A-13",
+   "title": "A-13: Experiment: operative part against the whole act",
+   "lane": "A",
+   "priority": "Should",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: A",
+    "prio: should",
+    "size: S"
+   ],
+   "body": "**What:** Does the model do better, and what does it cost, when it gets the whole act instead of only the rules?\n\n**Done when:** Tokens, cost and accuracy for both, on the practice set, in the report.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-01",
+   "title": "B-01: Queries that find the acts and notices",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Ask the EU's catalogue which trade defence regulations, decisions, corrections and notices exist.\n\n**Done when:** The 30-day query returns the measured counts, or the difference is explained.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-02",
+   "title": "B-02: Download and store the raw acts",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Fetch the text of each act and store it unchanged, with a fingerprint.\n\n**Done when:** Each act is stored with fingerprint, size and time; the same act fetched twice is stored once.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-03",
+   "title": "B-03: 24-month backfill, and counts per act type",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "counts on Tue 24 Nov",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Download two years of acts and tell the team how many of each kind there are.\n\n**Done when:** About 200 acts are stored and committed compressed; the counts per type are reported and decide the make-up of the practice set and the exam.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | counts on Tue 24 Nov |\n\n**Read first:**\n\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-04",
+   "title": "B-04: Commands and the daily job",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "from week 3",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** The commands that run the pipeline, and a job that runs it every day without us.\n\n**Done when:** `tdd backfill`, `tdd daily` and `tdd replay` exist; the daily job runs as a scheduled GitHub Actions job against the online database.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | from week 3 |\n\n**Read first:**\n\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-05",
+   "title": "B-05: Triage: the act type from title rules",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "frozen Fri 27 Nov",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Fixed rules on the title that say what kind of act this is.\n\n**Done when:** Every downloaded act has a type and a confidence; registration and initiation regulations still go to full extraction; the rules are frozen before the exam is drawn.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | frozen Fri 27 Nov |\n\n**Read first:**\n\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-06",
+   "title": "B-06: Ledger: measures, rates, products, dates",
+   "lane": "B",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** One card per duty, built from the checked facts: its rates, its products and its dates.\n\n**Done when:** Tests on the validity dates pass; a measure shows its history.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md]({{BLOB}}/docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-07",
+   "title": "B-07: The states of a measure over time",
+   "lane": "B",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** Registration, provisional, definitive, repeal, \"in force while a review runs\". The ledger must be right on every date.\n\n**Done when:** Each state has a test with a real act; amendments, corrections, suspensions and undertakings mark the measure for a person; no end date is computed.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md]({{BLOB}}/docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md)\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-08",
+   "title": "B-08: Product code list",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Load the official list of 8-digit product codes, so we can check that a code exists.\n\n**Done when:** The source and the year are recorded; the verifier and the matching use the list.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/13_SOURCES.md]({{BLOB}}/docs/13_SOURCES.md)\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-09",
+   "title": "B-09: Synthetic importer generator",
+   "lane": "B",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** A seeded script that makes our invented importer: suppliers and purchase lines, with spelling variants and decoys.\n\n**Done when:** 20 to 40 lines per importer with producer, product code, customs value, quantity, country of dispatch and invoice declaration; about a third fall under real acts; traders and decoys are included.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/README.md]({{BLOB}}/docs/examples/README.md)\n- [docs/examples/bergmann_purchase_lines.csv]({{BLOB}}/docs/examples/bergmann_purchase_lines.csv)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-10",
+   "title": "B-10: Name matcher: baseline and trained model",
+   "lane": "B",
+   "priority": "Must",
+   "size": "L",
+   "days": 3,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: L",
+    "model piece"
+   ],
+   "body": "**What:** Decide whether two producer names mean the same legal entity: first a spelling score, then a trained model.\n\n**Done when:** Four tiers and a safe threshold set on a validation split; training pairs are read as a stream; runs are logged in MLflow.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/04_WHOSE_NAME_IS_IT.md]({{BLOB}}/docs/examples/04_WHOSE_NAME_IS_IT.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "state": "open"
+  },
+  {
+   "id": "B-11",
+   "title": "B-11: Name matcher evaluation",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S",
+    "model piece"
+   ],
+   "body": "**What:** Measure whether the trained model really beats the spelling score.\n\n**Done when:** Baseline against trained model on the test pairs: how often it is right when it decides alone (with interval), the share sent to a person, and the share of true matches found.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/04_WHOSE_NAME_IS_IT.md]({{BLOB}}/docs/examples/04_WHOSE_NAME_IS_IT.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "state": "open"
+  },
+  {
+   "id": "B-12",
+   "title": "B-12: Dashboards and a drift report",
+   "lane": "B",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: B",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Prometheus, Grafana and Evidently, if there is time.\n\n**Done when:** A dashboard and one drift report.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-13",
+   "title": "B-13: Link notices to measures",
+   "lane": "B",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: B",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** A notice can keep a measure alive or announce its end. Connect each notice to its measure.\n\n**Done when:** Notices are linked by product and country; a notice that opens an expiry review shows on the case page of its measure and changes its status.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-15",
+   "title": "B-15: Experiment: three ways to find the act type",
+   "lane": "B",
+   "priority": "Should",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: B",
+    "prio: should",
+    "size: S"
+   ],
+   "body": "**What:** Title rules against a small trained model against a language model.\n\n**Done when:** One quality score for all three; the trained model learns from the practice set only; the exam act types are labelled by the owner of lane C.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "B-18",
+   "title": "B-18: Notices as early warnings in the inbox",
+   "lane": "B",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: B",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Show Thomas a new investigation on one of his products, months before any duty.\n\n**Done when:** A notice on a product in the importer's lines appears in the inbox.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md]({{BLOB}}/docs/examples/01_ONE_CASE_FOUR_DOCUMENTS.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-01",
+   "title": "C-01: Screens: inbox, case page, decisions, proof",
+   "lane": "C",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M1 for the case page on example files, M2 for all screens",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: M",
+    "first part due M1"
+   ],
+   "body": "**What:** The pages Thomas clicks, built from the prototype's HTML and JS and connected to the API.\n\n**Done when:** Inbox, case page, decisions and proof work in light and dark and at phone width.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M1 for the case page on example files, M2 for all screens |\n\n**Read first:**\n\n- [prototype/README.md]({{BLOB}}/prototype/README.md)\n- [docs/01_PRODUCT.md]({{BLOB}}/docs/01_PRODUCT.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-02",
+   "title": "C-02: API endpoints",
+   "lane": "C",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1, then with each feature",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** The API behind the screens.\n\n**Done when:** The paths for the M1 features exist, typed and tested; later paths arrive with their features.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M1, then with each feature |\n\n**Read first:**\n\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-03",
+   "title": "C-03: Euro engine, ported from the prototype",
+   "lane": "C",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M1 for the port, M2 for the rules",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: M",
+    "first part due M1"
+   ],
+   "body": "**What:** Work out the extra duty at last year's volumes, as a range while decisions are open.\n\n**Done when:** All 13 numbers of the prototype are reproduced; tests cover two duties on one line, the provisional collection rule and registration only.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M1 for the port, M2 for the rules |\n\n**Read first:**\n\n- [docs/examples/06_THE_EURO_MATHS.md]({{BLOB}}/docs/examples/06_THE_EURO_MATHS.md)\n- [prototype/README.md]({{BLOB}}/prototype/README.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-04",
+   "title": "C-04: Match purchase lines by product code and origin",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M1 Walking skeleton (Fri 27 Nov)",
+   "due": "M1",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Decide which purchase lines an act can hit at all.\n\n**Done when:** A 10-digit code decides when the line has one; an \"ex\" code without it is unsure; an extended measure sends the line to a person.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M1 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/examples/07_A_DUTY_THAT_FOLLOWS_THE_ROUTE.md]({{BLOB}}/docs/examples/07_A_DUTY_THAT_FOLLOWS_THE_ROUTE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-05",
+   "title": "C-05: Decisions list and audit log",
+   "lane": "C",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: M"
+   ],
+   "body": "**What:** One list of everything a person must decide, and a log of every decision.\n\n**Done when:** Every decision is a log entry; a reason is required for \"continue unverified\"; the export includes the log.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/10_FROM_A_CLICK_TO_THE_PROOF.md]({{BLOB}}/docs/examples/10_FROM_A_CLICK_TO_THE_PROOF.md)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-06",
+   "title": "C-06: Highlighted quotes",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Click a fact and see the sentence it came from.\n\n**Done when:** Clicking a field highlights its sentence; a quote that is not found word for word shows amber.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/10_FROM_A_CLICK_TO_THE_PROOF.md]({{BLOB}}/docs/examples/10_FROM_A_CLICK_TO_THE_PROOF.md)\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-07",
+   "title": "C-07: Scope judge",
+   "lane": "C",
+   "priority": "Must",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "first version on 3 acts by M2, full by M3",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: M",
+    "model piece"
+   ],
+   "body": "**What:** A language model says whether a purchase line is outside an act's scope: with a quote, or \"not sure\". A person confirms.\n\n**Done when:** It runs on every possibly covered line of acts with scope limits or exclusions.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | first version on 3 acts by M2, full by M3 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "state": "open"
+  },
+  {
+   "id": "C-08",
+   "title": "C-08: Scope judge evaluation",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S",
+    "model piece"
+   ],
+   "body": "**What:** Measure the scope judge on its test pairs.\n\n**Done when:** Right answers, missed cases and \"not sure\" answers as counts with an interval; once with the correct exclusions given, once end to end.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "state": "open"
+  },
+  {
+   "id": "C-09",
+   "title": "C-09: Plain-language summary of each act",
+   "lane": "C",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: C",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** A short summary of an act in simple words.\n\n**Done when:** It passes the number guard.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-10",
+   "title": "C-10: Replay",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Play back stored pipeline runs on screen, sped up, for the presentation.\n\n**Done when:** Twelve months of runs play back at a pace we set for the presentation, marked \"replay\".\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/04_ARCHITECTURE.md]({{BLOB}}/docs/04_ARCHITECTURE.md)\n- [docs/11_DECISIONS.md]({{BLOB}}/docs/11_DECISIONS.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-11",
+   "title": "C-11: Checklist and drafts from templates",
+   "lane": "C",
+   "priority": "Should",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: C",
+    "prio: should",
+    "size: S"
+   ],
+   "body": "**What:** A to-do list and draft messages for Thomas, filled from templates.\n\n**Done when:** Numbers appear only through template fields.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n- [docs/01_PRODUCT.md]({{BLOB}}/docs/01_PRODUCT.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-12",
+   "title": "C-12: Proof export",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** One file per case that shows how every number came about.\n\n**Done when:** One Markdown file per case with version, quotes, decisions, assumptions and \"not checked\" lines.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/10_FROM_A_CLICK_TO_THE_PROOF.md]({{BLOB}}/docs/examples/10_FROM_A_CLICK_TO_THE_PROOF.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-13",
+   "title": "C-13: CSV upload with a check per row",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M2 A real desk on real acts (Fri 4 Dec)",
+   "due": "M2",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Upload the importer's suppliers and purchase lines.\n\n**Done when:** Wrong rows are listed with a reason.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/bergmann_purchase_lines.csv]({{BLOB}}/docs/examples/bergmann_purchase_lines.csv)\n- [docs/05_DATA_SCHEMA.md]({{BLOB}}/docs/05_DATA_SCHEMA.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-14",
+   "title": "C-14: Email digest",
+   "lane": "C",
+   "priority": "Could",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: C",
+    "prio: could",
+    "size: S"
+   ],
+   "body": "**What:** One email a day with new hits.\n\n**Done when:** One digest a day for new hits.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Could |\n| Size | S, about half a day |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-15",
+   "title": "C-15: Usability test with two cohort members",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M4 Final presentation (17 or 18 Dec)",
+   "due": "M4",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** Watch two people who are new to the topic use the desk.\n\n**Done when:** Notes and fixes are in `reports/`.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M4 |\n\n**Read first:**\n\n- [docs/01_PRODUCT.md]({{BLOB}}/docs/01_PRODUCT.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-16",
+   "title": "C-16: Experiment: two models on the scope judge",
+   "lane": "C",
+   "priority": "Should",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: C",
+    "prio: should",
+    "size: S"
+   ],
+   "body": "**What:** Compare two models or providers on the same test pairs.\n\n**Done when:** Right answers, \"not sure\" rate and cost for both.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "C-17",
+   "title": "C-17: Number guard",
+   "lane": "C",
+   "priority": "Must",
+   "size": "S",
+   "days": 0.5,
+   "milestone": "M3 Feature freeze and the exam (Fri 11 Dec)",
+   "due": "M3",
+   "labels": [
+    "lane: C",
+    "prio: must",
+    "size: S"
+   ],
+   "body": "**What:** A test that proves the model wrote no number.\n\n**Done when:** An automatic test fails on any digit the model wrote outside a word-for-word quote.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-01",
+   "title": "K-01: UK as a second authority",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Read the acts of the UK Trade Remedies Authority with the same shapes.\n\n**Done when:** Twenty labelled acts, with the interval shown.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-02",
+   "title": "K-02: US anti-dumping notices",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Read US notices from the Federal Register.\n\n**Done when:** The different way the US collects duties is modelled and marked as unverified until checked.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-03",
+   "title": "K-03: German templates and German act text",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Alerts in German, from the German version of the act.\n\n**Done when:** The German text route is tested first.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-04",
+   "title": "K-04: WhatsApp window",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Ask the desk about a supplier in a chat.\n\n**Done when:** Works for one supplier question end to end.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-05",
+   "title": "K-05: Similar labelled acts as examples for the model",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Give the model a few similar acts that we already labelled.\n\n**Done when:** Examples come from the practice set only, never from the sealed exam.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-06",
+   "title": "K-06: Study across authorities",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** When the US or the UK acts on a product, does the EU open a case within 12 months?\n\n**Done when:** Promised in writing first; a \"no\" is a fine result.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-07",
+   "title": "K-07: Supplier press check",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** News about the exporters named in an act.\n\n**Done when:** Only started if at least 5 of the 14 newest acts have news on an exporter.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-08",
+   "title": "K-08: Value ledger: hours saved",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Show how much time the desk saves.\n\n**Done when:** Machine times are measured; human times stay marked as assumptions.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-09",
+   "title": "K-09: Kubernetes",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Run the desk on Kubernetes.\n\n**Done when:** Only if the release check runs on it.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-10",
+   "title": "K-10: dbt, Prefect, DVC",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** The course tools we left out.\n\n**Done when:** Add one only if it replaces something, never on top.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  },
+  {
+   "id": "K-11",
+   "title": "K-11: Live run view",
+   "lane": "shared",
+   "priority": "Could",
+   "size": "M",
+   "days": 1.5,
+   "milestone": "Extras (only after M3)",
+   "due": "after M3",
+   "labels": [
+    "lane: shared",
+    "prio: could",
+    "size: M"
+   ],
+   "body": "**What:** Watch a pipeline run step by step as it happens.\n\n**Done when:** The stored replay already covers the presentation; this is the live version.\n\n| | |\n|---|---|\n| Lane | Shared work |\n| Priority | Could |\n| Size | M, one to two days |\n| Due | after M3 |\n\n**Read first:**\n\n- [docs/03_SCOPE.md]({{BLOB}}/docs/03_SCOPE.md)\n",
+   "state": "open"
+  }
+ ]
+}

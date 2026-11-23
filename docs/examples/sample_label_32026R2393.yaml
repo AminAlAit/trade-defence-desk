@@ -1,0 +1,74 @@
+# A sketch of a hand-written answer file ("label") for one act.
+# The values are read from Regulation (EU) 2026/2393. The field names are a proposal:
+# the real format is fixed in issues X-04 and X-05.
+# Rule for labellers: copy numbers exactly as the act writes them, comma included.
+
+celex: 32026R2393
+act_type: definitive
+kind: AD
+date_document: 2026-10-29
+date_publication: 2026-10-30
+applicable_from_rule: day_after_publication
+
+product:
+  text_starts_with: "certain non-woven needle-punched sheets of polyester filaments"
+  cn_codes:
+    - {code: "5603 13 90", ex: true,  taric: "5603 13 90 70"}
+    - {code: "5603 14 20", ex: false, taric: null}
+    - {code: "5603 14 80", ex: true,  taric: "5603 14 80 70"}
+  exclusions: []
+
+origins:
+  - "People's Republic of China"
+
+duty_base: "net, free-at-Union-frontier price, before duty"
+
+company_rows:
+  - code: "88CB"
+    category: individual
+    rate: "39,8"
+    names:
+      - "Hubei Unibon nonwovens Co Ltd"
+  - code: "88CC"
+    category: individual
+    rate: "48,1"
+    names:                       # a grouped cell: two names, one rate, one code
+      - "Changde Tiandingfeng Nonwovens Co Ltd"
+      - "Tiandingfeng Nonwovens Co Ltd"
+  - code: "88CD"
+    category: cooperating_not_sampled
+    rate: "47,1"
+    names: ["Hebei Jinliu Chemical Fiber Co., Ltd."]
+  - code: "88CE"
+    category: cooperating_not_sampled
+    rate: "47,1"
+    names: ["Hebei Saikefu Nonwovens Co., Ltd."]
+  - code: "88CF"
+    category: cooperating_not_sampled
+    rate: "47,1"
+    names: ["Hubei Bushi Nonwovens Co., Ltd."]
+  - code: "88CG"
+    category: cooperating_not_sampled
+    rate: "47,1"
+    names: ["Shouguang Fada Cloth Co., Ltd."]
+  - code: "88CH"
+    category: cooperating_not_sampled
+    rate: "47,1"
+    names: ["Jiangyin Huasicheng Nonwoven Co., Ltd."]
+  - code: "8999"
+    category: residual
+    rate: "48,1"
+    names: []
+
+conditions:
+  invoice_declaration_required: true
+  invoice_declaration_article: "1(3)"
+  provisional_amounts: "definitively collected; amounts in excess of the definitive rates released"
+  provisional_act: "2026/1063"
+  retroactive_collection: false
+  registration_act: "2025/2409"
+  new_exporter_clause: true      # Article 3
+
+labelled_by: lane-b-owner
+labelled_from: act text only
+minutes_spent: 35                # invented
