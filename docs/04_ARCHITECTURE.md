@@ -83,13 +83,13 @@ because they are not steps of one act: the upload, the traces and the evaluation
 | 2 | `triage` | B | the title | the type of act | fixed rules on the title |
 | 3 | `normalise` | A | raw text | title, recitals, articles, annexes, each paragraph with an id | Python (`lxml`) |
 | 4 | `parse_tables` | A | the duty table | one row per code: kind of row, rate, all names in the row | Python, no model |
-| 5 | `extract_llm` | A | the operative part and the annexes | products, codes, origins, stage, dates, which older act it changes; a quote for every field | a language model with typed output |
+| 5 | `extract_llm` | A | the operative part and the annexes | products, codes, origins, stage, dates, which older act it changes; a quote for every field | `gpt-oss-120b` on Groq, typed output through PydanticAI |
 | 6 | `verify` | A | the extraction and the text | a status per field | quote search, value inside its quote, code list lookup, parser against model |
 | 7 | `ledger` | B | checked extractions | measures with rates, names, products, events and dates | SQL views or a Python build step |
 | | `importer` | C | a CSV upload | checked suppliers and purchase lines | Pydantic |
 | 8 | `match_product` | C | purchase lines and the ledger | in scope, out of scope, or unsure | product code and origin |
-| 9 | `match_name` | B | the producer on the line and the names in each row | a tier and a score per pair | spelling score and a trained model |
-| 10 | `scope_judge` | C | a line that might be covered, and the act's product description | outside scope, inside scope, or not sure; with a quote | a language model; a person confirms |
+| 9 | `match_name` | B | the producer on the line and the names in each row | a tier and a score per pair | `rapidfuzz` spelling score, then logistic regression or a random forest |
+| 10 | `scope_judge` | C | a line that might be covered, and the act's product description | outside scope, inside scope, or not sure; with a quote | `gpt-oss-120b` on Groq; a person confirms |
 | 11 | `exposure` | C | matches, decisions, assumptions | a euro range | Python, ported from the prototype |
 | 12 | `decisions` | C | open questions from all steps | one list; answers with a reason; log entries | database and API |
 | 13 | `api`, `ui` | C | all tables | the screens | FastAPI, and the prototype's HTML and JS |

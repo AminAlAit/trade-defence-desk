@@ -12,10 +12,10 @@ Fewer tools, each one used for real. Most come from the bootcamp.
 | Getting the acts | `httpx`, SPARQL | asks the EU's catalogue which acts exist, then downloads them | B |
 | Reading the acts | `lxml` | cuts the text into sections and reads the duty table | A |
 | Language model | PydanticAI | calls the model and forces typed, checkable answers | A |
-| Model provider | one provider, picked on Tue 24 Nov after measuring 3 acts | long acts need a model that can read long texts; cost and limits decide | A |
+| Language model | `openai/gpt-oss-120b` on Groq | reads the acts and judges the scope; see "The models, piece by piece" | A, C |
 | Model cache | a table in Postgres | the same question is never paid for twice | A |
 | Traces and cost | Langfuse Cloud | shows every model call with tokens, cost and time | A |
-| Name matching | scikit-learn, `rapidfuzz` | a small trained model on top of spelling scores | B |
+| Name matching | `rapidfuzz`, scikit-learn, Optuna | spelling scores, then a small trained model tuned with Optuna | B |
 | Experiment tracking | MLflow, local files | remembers every training run and its numbers | B |
 | Database | Postgres | acts, ledger, Bergmann's lines, decisions, cache | B |
 | Scheduling | CLI commands, GitHub Actions | the daily run, with no extra server | B |
@@ -41,6 +41,40 @@ Fewer tools, each one used for real. Most come from the bootcamp.
 
 A left-out tool may come back only if it replaces something. Never on top.
 
+## The models, piece by piece
+
+| Piece | Lane | Model | Compared with |
+|---|---|---|---|
+| Extraction agent (A-03) | A | `openai/gpt-oss-120b` on Groq, reasoning effort "low", temperature 0, through PydanticAI | the parser alone, and the model alone (the three systems in [10_EVALUATION.md](10_EVALUATION.md)) |
+| Name matcher (B-10) | B | logistic regression, then a random forest; both scikit-learn, tuned with Optuna, logged in MLflow; the better one on the validation split is kept | a `rapidfuzz` spelling score with a threshold |
+| Scope judge (C-07) | C | the same `openai/gpt-oss-120b` on Groq | always "inside the scope" |
+| Act-type study (B-15, Should) | B | TF-IDF plus logistic regression (scikit-learn), and `openai/gpt-oss-120b` without examples | the title rules |
+| Second model (C-16, Should) | C | `ministral-14b-latest` on Mistral | `openai/gpt-oss-120b` on the same test pairs |
+
+One model for every reported number, so the numbers can be compared (D-24). The name
+matcher's inputs are the signals listed in
+[examples/04_WHOSE_NAME_IS_IT.md](examples/04_WHOSE_NAME_IS_IT.md).
+
+### How the model was chosen
+
+On Tue 24 Nov we sent the articles and annex of three real acts (2026/2393, 2026/1063,
+2026/2311) to the models of the four providers we had keys for. Same prompt, temperature
+0. We counted the company rows (8, 8 and 1) and checked every quote against the act
+`[MEASURED 2026-11-24]`:
+
+| Model | Rows right | Grouped cell right | Quotes found in the act | Seconds per act | Free-tier limit |
+|---|---|---|---|---|---|
+| `openai/gpt-oss-120b`, Groq | 17 of 17 | 2 of 2 | 19 of 20 | about 2 | 8,000 tokens a minute, about 1,000 requests a day |
+| `ministral-14b-latest`, Mistral | 17 of 17 | 2 of 2 | 9 of 10 | about 4 | 2 requests a minute, 40,000 tokens a minute |
+| `openai/gpt-oss-20b`, Groq | 17 of 17, plus 2 invented rows | 0 of 2 | 16 of 22 | about 1 | as for the 120b |
+| `gemma-4-26b-a4b-it`, Google and OpenRouter | no answer | | | | timeouts and rate limits |
+
+`openai/gpt-oss-20b` first returned nothing at all: with default settings it spent its whole
+answer on reasoning. Setting the reasoning effort to "low" fixed that.
+
+Three acts are a smoke test, not a result. All three belong to the practice set (the two
+fixed example acts, and 2026/1063 because it is the same case as 2026/2393).
+
 ## Setup, once the code exists
 
 1. `uv sync`, then `docker compose up -d postgres`.
@@ -52,12 +86,17 @@ Run heavy jobs on a small sample first, one at a time. A heavy job can freeze a 
 
 ## Model budget
 
-- An act is 5,000 to 40,000 input tokens `[EST]`. The big example act, 2026/2393, is
-  232 KB with 196 tables `[MEASURED 2026-11-13]`.
-- Development costs far more than the exam: 40 practice acts times about 10 prompt
-  versions is several million tokens `[EST]`.
-- Free tiers often limit tokens per minute `[VERIFY]`. If they cannot carry development,
-  the team agrees on a small shared budget with a hard cap.
+- **The part we send is small.** The articles and annex of an act are about 300 to 1,050
+  tokens. A whole act is 15,000 to 45,000 `[MEASURED 2026-11-24, counted as characters
+  divided by 4]`. One call with its answer used about 1,500 to 2,200 tokens.
+- **So the free tier carries development.** At about 2,000 tokens a call, Groq's free tier
+  allows about 4 acts a minute and about 1,000 calls a day `[MEASURED 2026-11-24]`. 40
+  practice acts times 10 prompt versions is 400 calls, spread over days.
+- **The whole act does not fit.** A whole act is above Groq's free limit of 8,000 tokens a
+  minute. The experiment in A-13 (whole act against the operative part) therefore needs
+  a small paid budget, or must use the 40,000-token minute on Mistral for the shorter acts.
+- **Each person uses their own free key** during development. The exam runs once on one
+  team key (D-25).
 
 ## What you may honestly put on a CV at the end
 

@@ -451,7 +451,7 @@
     "size: L",
     "model piece"
    ],
-   "body": "**What:** The model reads what a table cannot say: products, dates, which older act this one changes. Every answer comes with a quote.\n\n**Done when:** It runs on the 40 practice acts with typed output, a quote per field, company rows as a cross-check, tools and a budget; tokens, cost and time are stored per act; the provider is chosen.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "body": "**What:** The model reads what a table cannot say: products, dates, which older act this one changes. Every answer comes with a quote.\n\n**Done when:** It runs on the 40 practice acts with `openai/gpt-oss-120b` on Groq (reasoning effort low, temperature 0), typed output, a quote per field, company rows as a cross-check, tools and a call budget; tokens, cost and time are stored per act.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md]({{BLOB}}/docs/examples/03_THE_MODEL_AND_THE_QUOTE_GATE.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
    "state": "open"
   },
   {
@@ -605,7 +605,7 @@
     "prio: should",
     "size: S"
    ],
-   "body": "**What:** Does the model do better, and what does it cost, when it gets the whole act instead of only the rules?\n\n**Done when:** Tokens, cost and accuracy for both, on the practice set, in the report.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "body": "**What:** Does the model do better, and what does it cost, when it gets the whole act (15,000 to 45,000 tokens) instead of only the articles and annex (about 1,000)? The whole act is above the free Groq limit of 8,000 tokens a minute, so this needs a small paid budget or the shorter acts on Mistral.\n\n**Done when:** Tokens, cost and accuracy for both, on the practice set, in the report.\n\n| | |\n|---|---|\n| Lane | Lane A: extraction and platform |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n",
    "state": "open"
   },
   {
@@ -776,7 +776,7 @@
     "size: L",
     "model piece"
    ],
-   "body": "**What:** Decide whether two producer names mean the same legal entity: first a spelling score, then a trained model.\n\n**Done when:** Four tiers and a safe threshold set on a validation split; training pairs are read as a stream; runs are logged in MLflow.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/04_WHOSE_NAME_IS_IT.md]({{BLOB}}/docs/examples/04_WHOSE_NAME_IS_IT.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "body": "**What:** Decide whether two producer names mean the same legal entity. Baseline: a `rapidfuzz` spelling score with a threshold. Then a logistic regression and a random forest (scikit-learn) on the signals in example 04, tuned with Optuna; keep the better one.\n\n**Done when:** Four tiers and a safe threshold set on a validation split; training pairs are read as a stream; every run, with its Optuna settings, is logged in MLflow.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Must |\n| Size | L, three days or more |\n| Due | M2 |\n\n**Read first:**\n\n- [docs/examples/04_WHOSE_NAME_IS_IT.md]({{BLOB}}/docs/examples/04_WHOSE_NAME_IS_IT.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
    "state": "open"
   },
   {
@@ -845,7 +845,7 @@
     "prio: should",
     "size: S"
    ],
-   "body": "**What:** Title rules against a small trained model against a language model.\n\n**Done when:** One quality score for all three; the trained model learns from the practice set only; the exam act types are labelled by the owner of lane C.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "body": "**What:** Title rules against TF-IDF plus logistic regression (scikit-learn) against `openai/gpt-oss-120b` with no examples.\n\n**Done when:** One quality score for all three; the trained model learns from the practice set only; the exam act types are labelled by the owner of lane C.\n\n| | |\n|---|---|\n| Lane | Lane B: data and matching |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n- [docs/examples/08_A_QUIET_DAY.md]({{BLOB}}/docs/examples/08_A_QUIET_DAY.md)\n",
    "state": "open"
   },
   {
@@ -984,7 +984,7 @@
     "size: M",
     "model piece"
    ],
-   "body": "**What:** A language model says whether a purchase line is outside an act's scope: with a quote, or \"not sure\". A person confirms.\n\n**Done when:** It runs on every possibly covered line of acts with scope limits or exclusions.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | first version on 3 acts by M2, full by M3 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/06_AI_RULES.md]({{BLOB}}/docs/06_AI_RULES.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
+   "body": "**What:** A language model (`openai/gpt-oss-120b` on Groq, the same as the extraction) says whether a purchase line is outside an act's scope: with a quote, or \"not sure\". A person confirms.\n\n**Done when:** It runs on every possibly covered line of acts with scope limits or exclusions.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Must |\n| Size | M, one to two days |\n| Due | first version on 3 acts by M2, full by M3 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n\nThis is one of the three model pieces. It may shrink, but it is never cut.\n",
    "state": "open"
   },
   {
@@ -1138,7 +1138,7 @@
     "prio: should",
     "size: S"
    ],
-   "body": "**What:** Compare two models or providers on the same test pairs.\n\n**Done when:** Right answers, \"not sure\" rate and cost for both.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/examples/05_IN_SCOPE_OR_NOT.md]({{BLOB}}/docs/examples/05_IN_SCOPE_OR_NOT.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
+   "body": "**What:** Compare `openai/gpt-oss-120b` on Groq with `ministral-14b-latest` on Mistral, on the same test pairs.\n\n**Done when:** Right answers, \"not sure\" rate and cost for both.\n\n| | |\n|---|---|\n| Lane | Lane C: product and decisions |\n| Priority | Should |\n| Size | S, about half a day |\n| Due | M3 |\n\n**Read first:**\n\n- [docs/07_TECH_STACK.md]({{BLOB}}/docs/07_TECH_STACK.md)\n- [docs/10_EVALUATION.md]({{BLOB}}/docs/10_EVALUATION.md)\n",
    "state": "open"
   },
   {

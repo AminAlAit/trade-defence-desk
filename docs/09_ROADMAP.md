@@ -29,7 +29,7 @@ Course days still take time, so we count on 14 to 16 real working days per perso
 | Day | Lane A | Lane B | Lane C | Together |
 |---|---|---|---|---|
 | Mon 23 | repo and automatic checks; first draft of the data shapes; example files started | the queries that find acts and notices | prototype served by FastAPI, case page on the example file; read the current basic regulation | kickoff |
-| Tue 24 | **measure 3 acts** with each candidate model provider; start cutting text into sections | download 24 months of acts, raw only; report how many of each type | first API endpoints; start porting the euro engine | choose the model provider and the budget; write to 2 or 3 customs contacts |
+| Tue 24 | **measure 3 acts** with each candidate model provider (done: see `07_TECH_STACK.md`); start cutting text into sections | download 24 months of acts, raw only; report how many of each type | first API endpoints; start porting the euro engine | choose the model provider and the budget; write to 2 or 3 customs contacts |
 | Wed 25 | sections done; parser starts; Docker Compose | source for the product code list | euro engine and its 13 checks; labelling viewer | labelling guide; 1 hour of practice labelling each |
 | Thu 26 | parser on 2026/2393 with the grouped-cell test | title rules for triage | product code and origin matching | **freeze the data shapes**, approved by all three |
 | Fri 27 | parser output into the database, shown on the case page | **freeze the title rules, draw and seal the exam** | case page reads from the API | **M1 demo and retro**; 2 hours of practice labelling each |
