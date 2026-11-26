@@ -73,7 +73,7 @@ def build_measure(act: Act, sections: list[ActSection]) -> Measure:
     stage: Stage = "definitive" if act.act_type.startswith("definitive") else "provisional"
     product = next(s.text for s in sections if s.section_id == "art_1.1")
     return Measure(
-        measure_id=f"AD-{act.celex[1:5]}-{int(act.celex[6:])}",
+        measure_id=act.celex,  # agreed with Suma for M1: the act's celex
         kind="AD",
         stage=stage,
         product_text=product,

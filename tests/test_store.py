@@ -34,7 +34,7 @@ def test_act_row(parts):
 
 def test_measure_row(parts):
     measure = parts[1]
-    assert measure.measure_id == "AD-2026-2393"
+    assert measure.measure_id == "32026R2393"
     assert measure.origin_countries == ["CN"]
     assert measure.valid_to is None  # no computed end date
 
@@ -49,7 +49,7 @@ def test_eight_rates_eight_names(parts):
 
 def test_grouped_cell_shares_one_rate_id(parts):
     aliases = parts[3]
-    assert sum(a.rate_id == "AD-2026-2393-88CC" for a in aliases) == 2
+    assert sum(a.rate_id == "32026R2393-88CC" for a in aliases) == 2
 
 
 def test_country_wide_rate_for_2311():
@@ -58,7 +58,7 @@ def test_country_wide_rate_for_2311():
     measure = build_measure(build_act("32026R2311", raw, sections), sections)
     rates, aliases = to_ledger(measure, parse_duty_rows(raw), duty_basis(sections))
     assert [(r.rate_id, r.rate_category, r.rate_pct) for r in rates] == [
-        ("AD-2026-2311-all", "country_wide", Decimal("15.8"))
+        ("32026R2311-all", "country_wide", Decimal("15.8"))
     ]
     assert aliases == []
 
@@ -71,7 +71,7 @@ def test_save_twice_same_rows():
         first = save(conn, CELEX)
         second = save(conn, CELEX)
         count = conn.execute(
-            "SELECT count(*) FROM measure_rate WHERE measure_id = 'AD-2026-2393'"
+            "SELECT count(*) FROM measure_rate WHERE measure_id = '32026R2393'"
         ).fetchone()
     assert first == second == {"sections": 183, "rates": 8, "aliases": 8}
     assert count is not None and count[0] == 8
