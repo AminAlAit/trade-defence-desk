@@ -1,0 +1,8 @@
+{
+  "run": {"run_id": "R1", "kind": "backfill", "started_at": "2026-11-27T08:00:00+01:00", "finished_at": "2026-11-27T08:00:02+01:00"},
+  "events": [
+    {"run_id": "R1", "step": "normalise", "celex": "32026R2393", "status": "ok", "detail": "183 sections", "ms": 140},
+    {"run_id": "R1", "step": "parse_tables", "celex": "32026R2393", "status": "ok", "detail": "8 duty rows", "ms": 35},
+    {"run_id": "R1", "step": "parse_tables", "celex": "32026R2311", "status": "ok", "detail": "1 country-wide rate", "ms": 20}
+  ]
+}

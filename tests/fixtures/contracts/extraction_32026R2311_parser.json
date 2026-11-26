@@ -1,0 +1,18 @@
+{
+  "extraction_id": "32026R2311-parser-1",
+  "celex": "32026R2311",
+  "system": "parser",
+  "origins": [],
+  "origin_countries": [],
+  "cn_codes": [],
+  "duty_rows": [
+    {
+      "category": "country_wide",
+      "rate_pct": "15.8",
+      "rate_text": "15,8",
+      "names": [],
+      "section_id": "art_1.2",
+      "needs_review": false
+    }
+  ]
+}
