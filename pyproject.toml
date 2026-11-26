@@ -1,0 +1,40 @@
+[project]
+name = "trade-defence-desk"
+version = "0.1.0"
+description = "Reads anti-dumping acts and shows a synthetic importer which of its suppliers they name."
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "fastapi>=0.165.0",
+    "httpx>=0.28.1",
+    "langfuse>=5.2.0",
+    "lxml>=6.1.3",
+    "mlflow>=3.18.0",
+    "optuna>=5.1.0",
+    "pydantic>=2.14.4",
+    "pydantic-ai-slim[groq,mistral]>=2.73.0",
+    "rapidfuzz>=3.14.6",
+    "scikit-learn>=1.9.1",
+    "uvicorn>=0.54.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13,<0.14"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+    "ty>=0.0.109",
+]

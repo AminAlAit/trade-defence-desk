@@ -1,0 +1,357 @@
+celex,kind,act_type,confidence,route,to_person,rule
+52024XC07109,notice,expiry_review,high,list_only,False,notice expiry review
+52024XC07403,notice,initiation,high,list_only,False,notice proceeding
+52024XC07405,notice,expiry_review,high,list_only,False,notice expiry review
+52024XC07407,notice,initiation,high,list_only,False,notice proceeding
+32024R3014,regulation,definitive,high,full_extraction,False,definitive
+32025R0004,regulation,definitive,high,full_extraction,False,definitive
+52024XC07515,notice,safeguard,high,list_only,True,notice safeguard
+32024R3201,regulation,amendment,high,full_extraction,True,amending
+32024R3193,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52024XC07456,notice,interim_review,high,list_only,False,notice interim review
+52024XC07459,notice,initiation,high,list_only,False,notice proceeding
+52024XC07460,notice,initiation,high,list_only,False,notice proceeding
+52024XC07490,notice,initiation,high,list_only,False,notice proceeding
+52024XC07541,notice,safeguard,high,list_only,True,notice safeguard
+52024XC07461,notice,initiation,high,list_only,False,notice proceeding
+32025R0045,regulation,definitive,high,full_extraction,False,definitive
+32025R0036,regulation,definitive,high,full_extraction,False,definitive
+32025R0074,regulation,provisional,high,full_extraction,False,provisional
+32025R0081,regulation,provisional,high,full_extraction,False,provisional
+52025XC00302,notice,impending_expiry,high,list_only,False,notice impending expiry
+32025R0058,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R0060,regulation,definitive,high,full_extraction,False,definitive
+32025R0061,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R0078,regulation,provisional,high,full_extraction,False,provisional
+52025XC00360,notice,expiry_review,high,list_only,False,notice expiry review
+32025R0100,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025D0110,decision,exemption,high,full_extraction,True,exemption
+32025R0114,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R0120,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52025XC00462,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC00680,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC00862,notice,impending_expiry,high,list_only,False,notice impending expiry
+32025R0074R(01),regulation,correction,high,full_extraction,True,corrigendum
+32025R0261,regulation,definitive,high,full_extraction,False,definitive
+32025R0266,regulation,correction,high,full_extraction,True,correcting
+32025R0291,regulation,provisional,high,full_extraction,False,provisional
+52025XC01135,notice,initiation,high,list_only,False,notice proceeding
+32025R0325,regulation,amendment,high,full_extraction,True,amending
+32025R0329,regulation,exemption,high,full_extraction,True,exemption
+52025XC00360R(01),notice,correction,high,list_only,True,notice correction
+32025R0393,regulation,provisional,high,full_extraction,False,provisional
+52025XC01276,notice,initiation,high,list_only,False,notice proceeding
+52025XC01461,notice,expiry_review,high,list_only,False,notice expiry review
+32025R0431,regulation,correction,high,full_extraction,True,correcting
+52025XC01490,notice,initiation,high,list_only,False,notice proceeding
+32025R0074R(02),regulation,correction,high,full_extraction,True,corrigendum
+32025R0500,regulation,definitive,high,full_extraction,False,definitive
+52025XC01608,notice,initiation,high,list_only,False,notice proceeding
+32025R0501,regulation,definitive,high,full_extraction,False,definitive
+52025XC01686,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC01687,notice,initiation,high,list_only,False,notice proceeding
+32025R0612,regulation,safeguard,high,person,True,safeguard
+32025R0612R(01),regulation,correction,high,full_extraction,True,corrigendum
+52025XC02022,notice,expiry_review,high,list_only,False,notice expiry review
+32025R0670,regulation,provisional,high,full_extraction,False,provisional
+32025R0698,regulation,extension,high,full_extraction,False,extending
+52025XC02264,notice,other,low,list_only,True,notice other
+32025R0780,regulation,provisional,high,full_extraction,False,provisional
+32025R0796,regulation,definitive,high,full_extraction,False,definitive
+32025R0828,regulation,correction,high,full_extraction,True,correcting
+32025R0261R(01),regulation,correction,high,full_extraction,True,corrigendum
+32025R0826,regulation,correction,high,full_extraction,True,correcting
+32025R0835,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52025XC02778,notice,initiation,high,list_only,False,notice proceeding
+52025XC02787,notice,initiation,high,list_only,False,notice proceeding
+32025R1042,regulation,definitive,high,full_extraction,False,definitive
+32025D1067,decision,termination,high,full_extraction,False,terminating
+52025XC03092,notice,impending_expiry,high,list_only,False,notice impending expiry
+32025R1139,regulation,provisional,high,full_extraction,False,provisional
+52025XC03135,notice,initiation,high,list_only,False,notice proceeding
+32025R1135,regulation,definitive,high,full_extraction,False,definitive
+32025R1151,regulation,definitive,high,full_extraction,False,definitive
+52025XC03223,notice,expiry_review,high,list_only,False,notice expiry review
+32025R1202,regulation,extension,high,full_extraction,False,extending
+52025XC03325,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC01276R(01),notice,correction,high,list_only,True,notice correction
+52025XC03442,notice,expiry_review,high,list_only,False,notice expiry review
+32025R1288,regulation,provisional,high,full_extraction,False,provisional
+52025XC03570,notice,expiry_review,high,list_only,False,notice expiry review
+52025XC03573,notice,impending_expiry,high,list_only,False,notice impending expiry
+32025R1309,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R1330,regulation,definitive,high,full_extraction,False,definitive
+32025R1342,regulation,definitive,high,full_extraction,False,definitive
+32025R1448,regulation,initiation,high,full_extraction,False,initiating
+32025R1456,regulation,provisional,high,full_extraction,False,provisional
+52025XC03135R(01),notice,correction,high,list_only,True,notice correction
+32025R1042R(01),regulation,correction,high,full_extraction,True,corrigendum
+52025XC04007,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC04008,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC04009,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC04010,notice,expiry_review,high,list_only,False,notice expiry review
+52025XC04011,notice,expiry_review,high,list_only,False,notice expiry review
+32025R1506,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R1508,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R1501,regulation,amendment,high,full_extraction,True,amending
+32025R1505,regulation,definitive,high,full_extraction,False,definitive
+32025R1581,regulation,safeguard,high,person,True,safeguard
+52025XC04120,notice,initiation,high,list_only,False,notice proceeding
+32025R1573,regulation,amendment,high,full_extraction,True,amending
+32025R1288R(01),regulation,correction,high,full_extraction,True,corrigendum
+32025R1711,regulation,provisional,high,full_extraction,False,provisional
+32025R1717,regulation,definitive,high,full_extraction,False,definitive
+32025R1720,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R1723,regulation,provisional,high,full_extraction,False,provisional
+32025R1724,regulation,provisional,high,full_extraction,False,provisional
+32025R1732,regulation,provisional,high,full_extraction,False,provisional
+32025R1737,regulation,provisional,high,full_extraction,False,provisional
+52025XC04539,notice,initiation,high,list_only,False,notice proceeding
+32025R1739,regulation,provisional,high,full_extraction,False,provisional
+32025R1737R(01),regulation,correction,high,full_extraction,True,corrigendum
+32025R1748,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52025XC04850,notice,initiation,high,list_only,False,notice proceeding
+32025R1861,regulation,correction,high,full_extraction,True,correcting
+32025R1866,regulation,correction,high,full_extraction,True,correcting
+32025R1868,regulation,correction,high,full_extraction,True,correcting
+32025R1869,regulation,correction,high,full_extraction,True,correcting
+32025R1883,regulation,correction,high,full_extraction,True,correcting
+52025XC05010,notice,initiation,high,list_only,False,notice proceeding
+52025XC05015,notice,safeguard,high,list_only,True,notice safeguard
+52025XC05018,notice,impending_expiry,high,list_only,False,notice impending expiry
+32025R1711R(01),regulation,correction,high,full_extraction,True,corrigendum
+32025R1890,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52025XC05021,notice,initiation,high,list_only,False,notice proceeding
+52025XC05025,notice,initiation,high,list_only,False,notice proceeding
+32025R1901,regulation,definitive,high,full_extraction,False,definitive
+32025R1919,regulation,definitive,high,full_extraction,False,definitive
+52025XC05136,notice,expiry_review,high,list_only,False,notice expiry review
+52025XC05240,notice,initiation,high,list_only,False,notice proceeding
+32025R1985,regulation,correction,high,full_extraction,True,correcting
+52025XC05293,notice,expiry_review,high,list_only,False,notice expiry review
+32025R1981,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52025XC05415,notice,impending_expiry,high,list_only,False,notice impending expiry
+32021R1266R(02),regulation,correction,high,full_extraction,True,corrigendum
+32021R1267R(02),regulation,correction,high,full_extraction,True,corrigendum
+32025R2081,regulation,definitive,high,full_extraction,False,definitive
+52025XC05537,notice,expiry_review,high,list_only,False,notice expiry review
+32025R2118,regulation,definitive,low,full_extraction,True,reimposing
+52025XC05628,notice,expiry_review,high,list_only,False,notice expiry review
+32025R2146,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R2153,regulation,definitive,high,full_extraction,False,definitive
+32025R2148,regulation,correction,high,full_extraction,True,correcting
+32025R1737R(02),regulation,correction,high,full_extraction,True,corrigendum
+32025R2149,regulation,amendment,high,full_extraction,True,amending
+32025R2219,regulation,provisional,high,full_extraction,False,provisional
+32025R2216,regulation,amendment,high,full_extraction,True,amending
+52025XC05924,notice,initiation,high,list_only,False,notice proceeding
+52025XC05902,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC05909,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC05911,notice,initiation,high,list_only,False,notice proceeding
+32025R2287,regulation,provisional,high,full_extraction,False,provisional
+32025R2314,regulation,provisional,high,full_extraction,False,provisional
+32025R2320,regulation,amendment,high,full_extraction,True,amending
+32025R2351,regulation,safeguard,high,person,True,safeguard
+32025R2333,regulation,definitive,high,full_extraction,False,definitive
+52025XC06235,notice,initiation,high,list_only,False,notice proceeding
+32025R2328,regulation,amendment,high,full_extraction,True,amending
+32025R2337,regulation,amendment,high,full_extraction,True,amending
+32025R2386,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32025R2432,regulation,registration,high,full_extraction,False,registration
+52025XC06545,notice,interim_review,high,list_only,False,notice interim review
+32025R2219R(01),regulation,correction,high,full_extraction,True,corrigendum
+52025XC06532,notice,impending_expiry,high,list_only,False,notice impending expiry
+32025R2490,regulation,registration,high,full_extraction,False,registration
+52025XC06555,notice,initiation,high,list_only,False,notice proceeding
+52025XC05628R(01),notice,correction,high,list_only,True,notice correction
+52025XC06682,notice,expiry_review,high,list_only,False,notice expiry review
+32025R2589,regulation,definitive,high,full_extraction,False,definitive
+52025XC06710,notice,impending_expiry,high,list_only,False,notice impending expiry
+52025XC06699,notice,other,low,list_only,True,notice other
+52025XC06726,notice,initiation,high,list_only,False,notice proceeding
+52025XC06741,notice,initiation,high,list_only,False,notice proceeding
+52025XC06744,notice,initiation,high,list_only,False,notice proceeding
+32026R0065,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R0071,regulation,definitive,high,full_extraction,False,definitive
+32026R0099,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R0114,regulation,definitive,high,full_extraction,False,definitive
+32026R0142,regulation,registration,high,full_extraction,False,registration
+32026R0157,regulation,definitive,high,full_extraction,False,definitive
+52026XC00499,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC00532,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R0191,regulation,amendment,high,full_extraction,True,amending
+32026R0198,regulation,amendment,high,full_extraction,True,amending
+32026R0244,regulation,definitive,high,full_extraction,False,definitive
+32026R0270,regulation,provisional,high,full_extraction,False,provisional
+32026R0274,regulation,amendment,high,full_extraction,True,amending
+32026R0276,regulation,definitive,high,full_extraction,False,definitive
+32026D0328,decision,undertaking,high,full_extraction,True,accepting undertaking
+32026R0297,regulation,registration,high,full_extraction,False,registration
+32026R0330,regulation,amendment,high,full_extraction,True,amending
+32026R0316,regulation,definitive,high,full_extraction,False,definitive
+32026R0319,regulation,definitive,high,full_extraction,False,definitive
+52026XC01022,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R0347,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R0362,regulation,registration,high,full_extraction,False,registration
+52026XC00987,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC01025,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC01026,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC01139,notice,expiry_review,high,list_only,False,notice expiry review
+32026R0428,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R0441,regulation,registration,high,full_extraction,False,registration
+32026R0479,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52026XC01375,notice,expiry,high,list_only,False,notice expiry
+52026XC01384,notice,interim_review,high,list_only,False,notice interim review
+32026R0687,regulation,safeguard,high,person,True,safeguard
+52026XC01469,notice,initiation,high,list_only,False,notice proceeding
+52026XC01506,notice,initiation,high,list_only,False,notice proceeding
+52026XC01504,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026D0560,decision,termination,high,full_extraction,False,terminating
+32026R0586,regulation,definitive,high,full_extraction,False,definitive
+32026D0671,decision,exemption,high,full_extraction,True,exemption
+52026XC01804,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R0698,regulation,correction,high,full_extraction,True,correcting
+32026R0701,regulation,amendment,high,full_extraction,True,amending
+32026R0702,regulation,amendment,high,full_extraction,True,amending
+32026R0704,regulation,amendment,high,full_extraction,True,amending
+32026R0709,regulation,extension,high,full_extraction,False,extending
+32026R0716,regulation,correction,high,full_extraction,True,correcting
+32026R0734,regulation,provisional,high,full_extraction,False,provisional
+52026XC01847,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC01848,notice,safeguard,high,list_only,True,notice safeguard
+52026XC01920,notice,expiry_review,high,list_only,False,notice expiry review
+32026R0801,regulation,provisional,high,full_extraction,False,provisional
+32026R0846,regulation,safeguard,high,person,True,safeguard
+32026R0822,regulation,definitive,high,full_extraction,False,definitive
+32026R0831,regulation,definitive,high,full_extraction,False,definitive
+52026XC02120,notice,expiry_review,high,list_only,False,notice expiry review
+32026R0843,regulation,amendment,high,full_extraction,True,amending
+52026XC02119,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC02148,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC02310,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R0916,regulation,provisional,high,full_extraction,False,provisional
+52026XC02330,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC02557,notice,other,low,list_only,True,notice other
+32026R0913,regulation,definitive,high,full_extraction,False,definitive
+32026R0274R(02),regulation,correction,high,full_extraction,True,corrigendum
+52026XC02535,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC02561,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R1045,regulation,provisional,high,full_extraction,False,provisional
+32026R1063,regulation,provisional,high,full_extraction,False,provisional
+32026R1085,regulation,registration,high,full_extraction,False,registration
+32026R1161,regulation,registration,high,full_extraction,False,registration
+52026XC02794,notice,expiry,high,list_only,False,notice expiry
+52026XC02810,notice,other,low,list_only,True,notice other
+32022R0558R(03),regulation,correction,high,full_extraction,True,corrigendum
+52026XC02827,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC02971,notice,initiation,high,list_only,False,notice proceeding
+52026XC02964,notice,initiation,high,list_only,False,notice proceeding
+32026R1203,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52026XC03097,notice,initiation,high,list_only,False,notice proceeding
+52026XC03105,notice,interim_review,high,list_only,False,notice interim review
+52026XC03124,notice,interim_review,high,list_only,False,notice interim review
+52026XC03203,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R1341,regulation,initiation,high,full_extraction,False,initiating
+32026R1371,regulation,correction,high,full_extraction,True,correcting
+32026R1373,regulation,definitive,high,full_extraction,False,definitive
+32026D1379,decision,termination,high,full_extraction,False,terminating
+32026R0916R(01),regulation,correction,high,full_extraction,True,corrigendum
+52026XC03320,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC03329,notice,other,low,list_only,True,notice other
+52026XC03454,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC03478,notice,initiation,high,list_only,False,notice proceeding
+52026XC03479,notice,initiation,high,list_only,False,notice proceeding
+32026R1540,regulation,definitive,high,full_extraction,False,definitive
+52026XC03536,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC03584,notice,initiation,high,list_only,False,notice proceeding
+52026XC03616,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC03705,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC03713,notice,initiation,high,list_only,False,notice proceeding
+32026R1785,regulation,amendment,high,full_extraction,True,amending
+32026R1788,regulation,amendment,high,full_extraction,True,amending
+32026R1840,regulation,initiation,high,full_extraction,False,initiating
+32026R1794,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R1823,regulation,definitive,high,full_extraction,False,definitive
+32026R1854,regulation,provisional,high,full_extraction,False,provisional
+32026R1857,regulation,provisional,high,full_extraction,False,provisional
+32026R1824,regulation,registration,high,full_extraction,False,registration
+52026XC04087,notice,interim_review,high,list_only,False,notice interim review
+52026XC04088,notice,interim_review,high,list_only,False,notice interim review
+52026XC04128,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC04227,notice,expiry_review,high,list_only,False,notice expiry review
+32026R1930,regulation,safeguard,high,person,True,safeguard
+32026R1914,regulation,provisional,high,full_extraction,False,provisional
+32026R1925,regulation,initiation,high,full_extraction,False,initiating
+32026R1904,regulation,definitive,high,full_extraction,False,definitive
+32026R1926,regulation,amendment,high,full_extraction,True,amending
+32026R1928,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R1929,regulation,provisional,high,full_extraction,False,provisional
+32026R0913R(02),regulation,correction,high,full_extraction,True,corrigendum
+52026XC04533,notice,other,low,list_only,True,notice other
+52026XC04547,notice,interim_review,high,list_only,False,notice interim review
+52026XC04636,notice,expiry_review,high,list_only,False,notice expiry review
+32026R1925R(01),regulation,correction,high,full_extraction,True,corrigendum
+32026R0817,regulation,safeguard,high,person,True,safeguard
+32026R2022,regulation,registration,high,full_extraction,False,registration
+32026R2023,regulation,registration,high,full_extraction,False,registration
+32026R2049,regulation,registration,high,full_extraction,False,registration
+52026XC04814,notice,interim_review,high,list_only,False,notice interim review
+52026XC04830,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC04857,notice,expiry_review,high,list_only,False,notice expiry review
+32026R2064,regulation,amendment,high,full_extraction,True,amending
+32026R2088,regulation,definitive,high,full_extraction,False,definitive
+32026R2089,regulation,amendment,high,full_extraction,True,amending
+32026R2133,regulation,safeguard,high,person,True,safeguard
+32026R2107,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+52026XC04910,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC04911,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC04912,notice,initiation,high,list_only,False,notice proceeding
+52026XC04913,notice,initiation,high,list_only,False,notice proceeding
+32026R2101,regulation,definitive,high,full_extraction,False,definitive
+32026R2118,regulation,registration,high,full_extraction,False,registration
+52026XC04914,notice,initiation,high,list_only,False,notice proceeding
+52026XC04924,notice,initiation,high,list_only,False,notice proceeding
+32026R2162,regulation,registration,high,full_extraction,False,registration
+52026XC04991,notice,interim_review,high,list_only,False,notice interim review
+52026XC04997,notice,interim_review,high,list_only,False,notice interim review
+52026XC05033,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC05019,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R2245,regulation,registration,high,full_extraction,False,registration
+52026XC05183,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC05252,notice,other,low,list_only,True,notice other
+52026XC05244,notice,expiry_review,high,list_only,False,notice expiry review
+32026R2270,regulation,safeguard,high,person,True,safeguard
+52026XC05408,notice,initiation,high,list_only,False,notice proceeding
+32026R2310,regulation,repeal,high,full_extraction,False,repealing
+32026R2311,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R2314,regulation,repeal,high,full_extraction,False,repealing
+32026R2319,regulation,amendment,high,full_extraction,True,amending
+32026R2327,regulation,definitive_expiry_review,high,full_extraction,False,definitive after expiry review
+32026R2345,regulation,registration,high,full_extraction,False,registration
+32026R2390,regulation,registration,high,full_extraction,False,registration
+52026XC05554,notice,initiation,high,list_only,False,notice proceeding
+32026R2391,regulation,registration,high,full_extraction,False,registration
+32026R2393,regulation,definitive,high,full_extraction,False,definitive
+32026R2396,regulation,registration,high,full_extraction,False,registration
+52026XC05566,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC05780,notice,safeguard,high,list_only,True,notice safeguard
+32026R2409,regulation,registration,high,full_extraction,False,registration
+52026XC05774,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC05775,notice,safeguard,high,list_only,True,notice safeguard
+52026XC05783,notice,initiation,high,list_only,False,notice proceeding
+32026R2497,regulation,provisional,high,full_extraction,False,provisional
+32026R2512,regulation,provisional,high,full_extraction,False,provisional
+32026R2547,regulation,definitive,high,full_extraction,False,definitive
+52026XC05958,notice,expiry_review,high,list_only,False,notice expiry review
+52026XC05959,notice,safeguard,high,list_only,True,notice safeguard
+32026R2532,regulation,registration,high,full_extraction,False,registration
+52026XC06003,notice,other,low,list_only,True,notice other
+32026R2538,regulation,correction,high,full_extraction,True,correcting
+52026XC06025,notice,expiry_review,high,list_only,False,notice expiry review
+32026D2579,decision,termination,high,full_extraction,False,terminating
+52026XC06044,notice,impending_expiry,high,list_only,False,notice impending expiry
+52026XC06045,notice,impending_expiry,high,list_only,False,notice impending expiry
+32026R2614,regulation,safeguard,high,person,True,safeguard
+52026XC06056,notice,other,low,list_only,True,notice other
+52026XC06060,notice,safeguard,high,list_only,True,notice safeguard
+52026XC06159,notice,initiation,high,list_only,False,notice proceeding
