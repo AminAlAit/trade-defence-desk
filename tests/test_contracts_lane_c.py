@@ -102,5 +102,10 @@ def test_run_ends_after_it_starts():
 
 
 def test_negative_time_is_an_error():
-    with pytest.raises(ValidationError):
-        RunEvent(run_id="R1", step="normalise", status="ok", ms=-1)
+    with pytest.raises(ValidationError, match="greater than or equal"):
+        RunEvent(run_id="R1", ts=NOW, step="normalise", status="ok", ms=-1)
+
+
+def test_event_time_needs_a_zone():
+    with pytest.raises(ValidationError, match="timezone"):
+        RunEvent(run_id="R1", ts=datetime(2026, 11, 27, 8), step="normalise", status="ok", ms=1)

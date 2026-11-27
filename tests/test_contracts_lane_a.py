@@ -5,15 +5,19 @@ Lane A contracts, checked against the example files from 2026/2393 and 2026/2311
 import json
 from decimal import Decimal
 from pathlib import Path
+from typing import get_args
 
 import pytest
 from pydantic import ValidationError
 
 from trade_defence_desk.contracts.lane_a import (
+    AMBER,
+    GREEN,
     ActExtraction,
     ActSection,
     DutyRow,
     FieldCheck,
+    FieldStatus,
     Quoted,
 )
 
@@ -59,6 +63,7 @@ def test_2393_parser_example_has_eight_rows():
 def test_field_checks_fit():
     checks = [FieldCheck(**c) for c in load("field_checks_32026R2393.json")]
     assert [c.status for c in checks] == ["checked_by_program", "quote_found", "not_verified"]
+    assert [c.amber for c in checks] == [False, False, True]
 
 
 @pytest.mark.parametrize(
@@ -133,5 +138,24 @@ def test_rate_without_percentage_goes_to_a_person():
 
 
 def test_quote_found_needs_the_quote():
-    with pytest.raises(ValidationError):
-        FieldCheck(extraction_id="e1", field_path="stage", status="quote_found")
+    with pytest.raises(ValidationError, match="needs the quote"):
+        FieldCheck(
+            check_id="e1:stage", extraction_id="e1", field_path="stage", status="quote_found"
+        )
+
+
+def test_check_id_is_extraction_and_field():
+    with pytest.raises(ValidationError, match="check_id must be"):
+        FieldCheck(check_id="c7", extraction_id="e1", field_path="stage", status="failed")
+
+
+def test_check_id_splits_one_way():
+    # "a:b" + "c" and "a" + "b:c" would both give "a:b:c"
+    with pytest.raises(ValidationError, match="pattern"):
+        FieldCheck(check_id="a:b:c", extraction_id="a:b", field_path="c", status="failed")
+    FieldCheck(check_id="a:b:c", extraction_id="a", field_path="b:c", status="failed")
+
+
+def test_every_status_is_green_or_amber():
+    assert GREEN | AMBER == set(get_args(FieldStatus))
+    assert not GREEN & AMBER

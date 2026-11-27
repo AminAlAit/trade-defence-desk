@@ -26,6 +26,9 @@ SectionKind = Literal["title", "citation", "recital", "article", "annex", "final
 # tit, cit_2, rct_12, art_1.2, anx_1.3, fin_1
 SECTION_ID = r"^(tit|(cit|rct|fin)_\d+|(art|anx)_\d+\.\d+)$"
 
+# No ":" in an extraction id, so a FieldCheck's check_id splits only one way.
+EXTRACTION_ID = r"^[^:]+$"
+
 
 class ActSection(_Contract):
     """
@@ -110,7 +113,7 @@ class ActExtraction(_Contract):
     One reading of one act by one system. Table `extraction`, the facts in `payload`.
     """
 
-    extraction_id: str
+    extraction_id: str = Field(pattern=EXTRACTION_ID, examples=["32026R2393-llm-1"])
     celex: str
     system: System
     provider: str | None = None  # None for the parser
@@ -153,13 +156,19 @@ class ActExtraction(_Contract):
 
 FieldStatus = Literal["checked_by_program", "quote_found", "not_verified", "failed"]
 
+# Green: the field passed its check. Amber: a person has to look (docs/02_GLOSSARY.md).
+GREEN: frozenset[FieldStatus] = frozenset({"checked_by_program", "quote_found"})
+AMBER: frozenset[FieldStatus] = frozenset({"not_verified", "failed"})
+
 
 class FieldCheck(_Contract):
     """
     The verifier's verdict on one field. Table `field_check`.
     """
 
-    extraction_id: str
+    # Added: a decision can point at one check. Always "<extraction_id>:<field_path>".
+    check_id: str = Field(examples=["32026R2393-llm-1:previous_act"])
+    extraction_id: str = Field(pattern=EXTRACTION_ID)
     field_path: str = Field(examples=["duty_rows[0].rate_pct"])
     status: FieldStatus
     quote: str | None = Field(default=None, min_length=1)
@@ -171,3 +180,13 @@ class FieldCheck(_Contract):
         if self.status == "quote_found" and (self.quote is None or self.section_id is None):
             raise ValueError("'quote_found' needs the quote and its section_id")
         return self
+
+    @model_validator(mode="after")
+    def _id_is_stable(self) -> FieldCheck:
+        if self.check_id != f"{self.extraction_id}:{self.field_path}":
+            raise ValueError("check_id must be '<extraction_id>:<field_path>'")
+        return self
+
+    @property
+    def amber(self) -> bool:
+        return self.status in AMBER

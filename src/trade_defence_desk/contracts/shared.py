@@ -36,6 +36,7 @@ class RunEvent(_Contract):
     """
 
     run_id: str
+    ts: AwareDatetime  # Added: when the step started, so the replay can order events
     step: str = Field(examples=["normalise", "parse_tables"])
     celex: str | None = None  # Added: which act, when the step works on one
     status: Literal["ok", "failed", "skipped"]
