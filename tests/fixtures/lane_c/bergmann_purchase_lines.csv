@@ -1,0 +1,10 @@
+line_id,description,cn_code,taric_code,supplier_name,supplier_country,producer_name,origin,country_of_dispatch,invoice_declaration_present,annual_customs_value_eur,in_transit_value_eur,incoterm
+L01,"Root-barrier fleece, polyester, 180 g/m2, 1.2 mm thick, with binder",56031480,5603148070,"Hubei Unibon Non-Woven Co., Ltd.",CN,"Hubei Unibon Non-Woven Co., Ltd.",CN,CN,yes,400000,36000,FOB
+L02,"Root-barrier fleece, polyester, 180 g/m2, 1.2 mm thick, with binder",56031480,5603148070,"Ningbo Seaway Trading Co., Ltd.",CN,Hebei Saikefu Nonwoven Co Ltd,CN,CN,no,120000,0,FOB
+L03,"Pond underlay fleece, polyester, 300 g/m2, 3 mm thick",56031480,,"Shandong Luye Geotextile Co., Ltd.",CN,"Shandong Luye Geotextile Co., Ltd.",CN,CN,no,85000,0,FOB
+L04,"Frost-protection fleece, 30 g/m2",56031290,,"Shandong Luye Geotextile Co., Ltd.",CN,"Shandong Luye Geotextile Co., Ltd.",CN,CN,no,20000,0,FOB
+L05,Plywood for garden benches,,,Curitiba Compensados Ltda,BR,Curitiba Compensados Ltda,BR,BR,no,150000,0,FOB
+L06,E-bike motors,,,Suzhou Hengli Drive Co Ltd,CN,Suzhou Hengli Drive Co Ltd,CN,CN,no,300000,0,FOB
+L07,"Glow-in-the-dark tent pegs, steel",,,Binh Phat Metal JSC,VN,Binh Phat Metal JSC,VN,VN,no,60000,0,FOB
+L08,Solar garden gnomes,,,Lucky Gnome Garden Co Ltd,CN,Lucky Gnome Garden Co Ltd,CN,CN,no,45000,0,FOB
+L09,"Geotextile fleece roll, polyester, 200 g/m2",56031480,,"Shandong Luye Geotextile Co., Ltd.",CN,"Shandong Luye Geotextile Co., Ltd.",CN,CN,no,30000,0,FOB
