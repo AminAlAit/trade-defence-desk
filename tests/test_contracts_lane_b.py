@@ -191,6 +191,8 @@ def test_amendment_goes_to_a_person():
 
 def test_name_match_tiers():
     hit = NameMatch(
+        purchase_line_id="L01",
+        matched_on="producer",
         invoice_name="Hubei Unibon Non-Woven Co., Ltd.",
         rate_id="r1",
         act_name="Hubei Unibon nonwovens Co Ltd",
@@ -200,6 +202,8 @@ def test_name_match_tiers():
     )
     assert hit.rate_id == "r1"
     miss = NameMatch(
+        purchase_line_id="L01",
+        matched_on="producer",
         invoice_name="Hubei Unibon New Materials Co., Ltd.",
         tier="no_match",
         score=0.667,
@@ -211,9 +215,60 @@ def test_name_match_tiers():
 
 def test_name_match_needs_row_unless_no_match():
     with pytest.raises(ValidationError, match="rate_id"):
-        NameMatch(invoice_name="x", tier="very_likely", score=0.98, matcher_version="v1")
+        NameMatch(
+            purchase_line_id="L01",
+            matched_on="producer",
+            invoice_name="x",
+            tier="very_likely",
+            score=0.98,
+            matcher_version="v1",
+        )
 
 
 def test_score_is_zero_to_one():
     with pytest.raises(ValidationError):
-        NameMatch(invoice_name="x", tier="no_match", score=95.5, matcher_version="v1")
+        NameMatch(
+            purchase_line_id="L01",
+            matched_on="producer",
+            invoice_name="x",
+            tier="no_match",
+            score=95.5,
+            matcher_version="v1",
+        )
+
+
+def test_name_match_supplier_fallback():
+    # Line L02 [INVENTED]: the invoice names no producer, so the matcher compares the
+    # supplier, a trader. The case page must say that the supplier was compared.
+    fallback = NameMatch(
+        purchase_line_id="L02",
+        matched_on="supplier",
+        invoice_name="Ningbo Seaway Trading Co., Ltd.",
+        tier="no_match",
+        score=0.31,
+        matcher_version="baseline-rapidfuzz-v1",
+    )
+    assert fallback.matched_on == "supplier"
+
+
+def test_name_match_on_only_producer_or_supplier():
+    with pytest.raises(ValidationError, match="matched_on"):
+        NameMatch(
+            purchase_line_id="L02",
+            matched_on="seller",
+            invoice_name="x",
+            tier="no_match",
+            score=0.1,
+            matcher_version="v1",
+        )
+
+
+def test_name_match_needs_purchase_line():
+    with pytest.raises(ValidationError, match="purchase_line_id"):
+        NameMatch(
+            matched_on="producer",
+            invoice_name="x",
+            tier="no_match",
+            score=0.1,
+            matcher_version="v1",
+        )

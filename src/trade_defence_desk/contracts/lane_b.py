@@ -250,7 +250,13 @@ class NameMatch(_Contract):
     little more, so the case page can show which names were compared.
     """
 
-    invoice_name: str  # the producer named on the invoice
+    # Which purchase line this answer is for, the same id as PurchaseLine.id (lane C).
+    purchase_line_id: str = Field(min_length=1, examples=["L02"])
+    invoice_name: str  # the name compared: see matched_on
+    # The duty rate follows the producer named on the invoice. When the invoice names no
+    # producer, the matcher compares the supplier instead, and the case page must say so
+    # (docs/examples/04_WHOSE_NAME_IS_IT.md, "The trader").
+    matched_on: Literal["producer", "supplier"]
     rate_id: str | None = None  # the duty table row it matched; None for no_match
     act_name: str | None = None  # the CompanyAlias name it was compared with
     tier: NameTier
