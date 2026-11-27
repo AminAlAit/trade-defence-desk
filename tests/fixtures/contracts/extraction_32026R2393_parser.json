@@ -1,0 +1,97 @@
+{
+  "extraction_id": "32026R2393-parser-1",
+  "celex": "32026R2393",
+  "system": "parser",
+  "origins": [],
+  "origin_countries": [],
+  "cn_codes": [],
+  "duty_rows": [
+    {
+      "taric_additional_code": "88CB",
+      "category": "individual",
+      "rate_pct": "39.8",
+      "rate_text": "39,8",
+      "names": [
+        "Hubei Unibon nonwovens Co Ltd"
+      ],
+      "section_id": "art_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "88CC",
+      "category": "individual",
+      "rate_pct": "48.1",
+      "rate_text": "48,1",
+      "names": [
+        "Changde Tiandingfeng Nonwovens Co Ltd",
+        "Tiandingfeng Nonwovens Co Ltd"
+      ],
+      "section_id": "art_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "88CD",
+      "category": "cooperating_not_sampled",
+      "rate_pct": "47.1",
+      "rate_text": "47,1",
+      "names": [
+        "Hebei Jinliu Chemical Fiber Co., Ltd."
+      ],
+      "section_id": "anx_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "88CE",
+      "category": "cooperating_not_sampled",
+      "rate_pct": "47.1",
+      "rate_text": "47,1",
+      "names": [
+        "Hebei Saikefu Nonwovens Co., Ltd."
+      ],
+      "section_id": "anx_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "88CF",
+      "category": "cooperating_not_sampled",
+      "rate_pct": "47.1",
+      "rate_text": "47,1",
+      "names": [
+        "Hubei Bushi Nonwovens Co., Ltd."
+      ],
+      "section_id": "anx_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "88CG",
+      "category": "cooperating_not_sampled",
+      "rate_pct": "47.1",
+      "rate_text": "47,1",
+      "names": [
+        "Shouguang Fada Cloth Co., Ltd."
+      ],
+      "section_id": "anx_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "88CH",
+      "category": "cooperating_not_sampled",
+      "rate_pct": "47.1",
+      "rate_text": "47,1",
+      "names": [
+        "Jiangyin Huasicheng Nonwoven Co., Ltd."
+      ],
+      "section_id": "anx_1.2",
+      "needs_review": false
+    },
+    {
+      "taric_additional_code": "8999",
+      "category": "residual",
+      "rate_pct": "48.1",
+      "rate_text": "48,1",
+      "names": [],
+      "section_id": "art_1.2",
+      "needs_review": false
+    }
+  ]
+}

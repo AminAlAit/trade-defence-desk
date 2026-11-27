@@ -1,0 +1,46 @@
+{
+  "extraction_id": "32026R2311-llm-1",
+  "celex": "32026R2311",
+  "system": "llm",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "prompt_version": "example",
+  "stage": {
+    "value": "definitive",
+    "quote": "A definitive anti-dumping duty is imposed",
+    "section_id": "art_1.1"
+  },
+  "origins": [
+    {
+      "value": "Republic of Korea",
+      "quote": "originating in the Republic of Korea",
+      "section_id": "art_1.1"
+    }
+  ],
+  "origin_countries": [
+    "KR"
+  ],
+  "cn_codes": [
+    {
+      "value": "ex 4809 90 00",
+      "quote": "CN codes ex 4809 90 00 , ex 4811 59 00 and ex 4811 90 00",
+      "section_id": "art_1.1"
+    },
+    {
+      "value": "ex 4811 59 00",
+      "quote": "CN codes ex 4809 90 00 , ex 4811 59 00 and ex 4811 90 00",
+      "section_id": "art_1.1"
+    },
+    {
+      "value": "ex 4811 90 00",
+      "quote": "CN codes ex 4809 90 00 , ex 4811 59 00 and ex 4811 90 00",
+      "section_id": "art_1.1"
+    }
+  ],
+  "applies_from_rule": {
+    "value": "the day following that of its publication",
+    "quote": "shall enter into force on the day following that of its publication",
+    "section_id": "art_2.1"
+  },
+  "duty_rows": []
+}

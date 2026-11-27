@@ -1,0 +1,29 @@
+[
+  {
+    "check_id": "32026R2393-parser-1:duty_rows[0].rate_pct",
+    "extraction_id": "32026R2393-parser-1",
+    "field_path": "duty_rows[0].rate_pct",
+    "status": "checked_by_program",
+    "quote": "Hubei Unibon nonwovens Co Ltd 39,8 88CB",
+    "section_id": "art_1.2",
+    "detail": "read from the operative table"
+  },
+  {
+    "check_id": "32026R2393-llm-1:stage",
+    "extraction_id": "32026R2393-llm-1",
+    "field_path": "stage",
+    "status": "quote_found",
+    "quote": "A definitive anti-dumping duty is imposed",
+    "section_id": "art_1.1",
+    "detail": "quote in the act, value in the quote"
+  },
+  {
+    "check_id": "32026R2393-llm-1:previous_act",
+    "extraction_id": "32026R2393-llm-1",
+    "field_path": "previous_act",
+    "status": "not_verified",
+    "quote": "under Commission Implementing Regulation (EU) 2026/1063",
+    "section_id": "art_2.1",
+    "detail": "value 2026/1036 is not in the quote"
+  }
+]

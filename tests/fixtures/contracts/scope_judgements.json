@@ -1,0 +1,13 @@
+[
+  {
+    "match_id": "M03", "verdict": "excluded",
+    "quote": "of a thickness exceeding 0,5 mm but not exceeding 1,8 mm", "section_id": "art_1.1",
+    "reason": "The line states a thickness above the range in the quoted condition.",
+    "model": "openai/gpt-oss-120b", "created_at": "2026-11-02T09:00:00+01:00"
+  },
+  {
+    "match_id": "M09", "verdict": "abstain",
+    "reason": "The description gives no thickness and does not say whether a binder is used.",
+    "model": "openai/gpt-oss-120b", "created_at": "2026-11-02T09:00:05+01:00"
+  }
+]
