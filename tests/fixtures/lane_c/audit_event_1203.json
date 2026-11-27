@@ -1,0 +1,16 @@
+{
+  "id": 1203,
+  "ts": "2026-11-02T09:14:31+01:00",
+  "actor": "thomas",
+  "kind": "decision_made",
+  "decision_id": 41,
+  "match_id": 7,
+  "payload": {
+    "question": "same_legal_entity",
+    "answer": "yes",
+    "line": "L01",
+    "measure": "AD, PET spunbond, China (32026R2393)",
+    "before": {"low_eur": "159200.00", "high_eur": "192400.00"},
+    "after": {"low_eur": "159200.00", "high_eur": "159200.00"}
+  }
+}

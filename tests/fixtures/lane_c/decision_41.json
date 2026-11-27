@@ -1,0 +1,9 @@
+{
+  "id": 41,
+  "question": "same_legal_entity",
+  "match_id": 7,
+  "answer": "yes",
+  "reason": "Business licence number on the supplier's 2025 contract matches the company registered at the address in the invoice declaration.",
+  "decided_by": "thomas",
+  "decided_at": "2026-11-02T09:14:31+01:00"
+}
