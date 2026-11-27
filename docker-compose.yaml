@@ -1,0 +1,42 @@
+# Two services: the API and Postgres. Ports bind to this laptop only.
+# First start runs sql/*.sql in name order. To start fresh: docker compose down -v
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: tdd
+      POSTGRES_PASSWORD: tdd
+      POSTGRES_DB: tdd
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    cpus: 1
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tdd -d tdd"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://tdd:tdd@postgres:5432/tdd
+    ports:
+      - "127.0.0.1:8000:8000"
+    cpus: 1
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:
