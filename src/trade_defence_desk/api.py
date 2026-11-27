@@ -1,5 +1,7 @@
 """
-The API, first cut: health, the acts and their text. The screens come later.
+The API, first cut: health, the acts, their text and their duty rows.
+
+Shiar's case page reads /acts/{celex}/rates. The screens come later.
 """
 
 from __future__ import annotations
@@ -53,3 +55,16 @@ def act_text(celex: str, section: str | None = None) -> list[dict]:
         sql += " AND section_id = %s"
         params.append(section)
     return _rows(sql + ' ORDER BY "order"', params)
+
+
+@app.get("/acts/{celex}/rates")
+def act_rates(celex: str) -> list[dict]:
+    _visible(celex)
+    return _rows(
+        "SELECT r.rate_id, r.taric_additional_code, r.rate_category, r.rate_pct, r.basis, "
+        "COALESCE(array_agg(a.name) FILTER (WHERE a.name IS NOT NULL), '{}') AS names "
+        "FROM measure m JOIN measure_rate r USING (measure_id) "
+        "LEFT JOIN company_alias a USING (rate_id) "
+        "WHERE m.legal_act_celex = %s GROUP BY r.rate_id ORDER BY r.rate_id",
+        [celex],
+    )
